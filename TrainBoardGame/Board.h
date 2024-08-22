@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class City
+class City // Probably will need an operator==
 {
 private:
 	std::string name;

@@ -13,9 +13,15 @@ Game::Game(int numPlayers)
 	}
 
 	// Setup Train Deck
-
+	deck = generateTrains();
+	// Setup front-view trains
+	for (int i = 0; i < 5; i++) {
+		face.push_back(deck.back());
+		deck.pop_back();
+	}
 
 	// Setup Destination Cards - player normally has choice, will forgo that for now and just give 2 or 3 
+	dests = generateDests(gameBoard.cities);
 
 	// Assign first player - will forgo for now maybe implement way later server-side
 }

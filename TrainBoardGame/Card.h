@@ -1,23 +1,25 @@
 #pragma once
+#include "Board.h"
 #include <string>
-
-enum class TrainColour { // Might just remove and replace with string
-	RED, BLUE, GREEN, ORANGE, YELLOW, PURPLE, PINK, BLACK, WHITE // Rainbow
-};
-
+#include <vector>
+#include <memory>
 
 // Undecided on whether I want a base Card class or just to leave them as distinct
 class TrainCard
 {
 public:
-	TrainCard(TrainColour colour);
-	TrainColour getColour() const;
+	TrainCard(string colour);
+	string getColour() const;
 private:
-	TrainColour colour;
+	string colour;
 };
 
+
 class DestinationCard {
-	std::string startCity; // Perhaps convert to city structure itself
-	std::string endCity;
+	shared_ptr<City> startCity; 
+	shared_ptr<City> endCity;
 	int points;
 };
+
+std::vector<std::shared_ptr<TrainCard>> generateTrains();
+std::vector<std::shared_ptr<DestinationCard>> generateDests(const std::vector<std::shared_ptr<City>>& cities);
