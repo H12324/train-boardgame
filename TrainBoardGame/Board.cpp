@@ -6,6 +6,15 @@ Board::Board()
     routes = initializeRoutes(cities);
 }
 
+Route::Route(shared_ptr<City> c1, shared_ptr<City> c2, string colour, int length) 
+{
+    city1 = c1;
+    city2 = c2;
+    colour = colour;
+    length = length;
+    owner = nullptr; // Nobody owns at beginning
+}
+
 // In Future could make custom Boards for different maps
 std::vector<std::shared_ptr<City>> Board::initializeCities() {
     return {

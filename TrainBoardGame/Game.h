@@ -10,9 +10,9 @@ using namespace std;
 class Game
 {
 private:
-	std::vector<TrainCard> deck;
-	std::vector<TrainCard> face; // Cards face-up in turn
-	vector<DestinationCard> dests;
+	std::vector<shared_ptr<TrainCard>> deck;
+	std::vector<shared_ptr<TrainCard>> face; // Cards face-up in turn
+	vector<shared_ptr<DestinationCard>> dests;
 	Board gameBoard;
 	vector<Player> players;
 	bool gameOver;

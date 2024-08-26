@@ -3,9 +3,13 @@
 #include <vector>
 #include <memory>
 
-#include "Player.h"
+//#include "Player.h"
 
 using namespace std;
+
+class Player;
+class TrainCard;
+class DestinationCard;
 
 class City // Probably will need an operator==
 {
@@ -17,6 +21,9 @@ public:
 };
 
 class Route {
+public:
+	Route(shared_ptr<City> c1, shared_ptr<City> c2, string colour, int length);
+private:
 	shared_ptr<City> city1;
 	shared_ptr <City> city2;
 	string colour;

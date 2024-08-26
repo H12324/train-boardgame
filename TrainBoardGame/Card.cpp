@@ -6,7 +6,7 @@ TrainCard::TrainCard(string colour)
 	this->colour = colour;
 }
 
-string TrainCard::getColour() const
+string TrainCard::getColour()
 {
 	return colour;
 }
@@ -34,6 +34,12 @@ std::vector<std::shared_ptr<TrainCard>> generateTrains()
     std::shuffle(trainDeck.begin(), trainDeck.end(), g);
 
     return trainDeck;
+}
+
+DestinationCard::DestinationCard(shared_ptr<City> sC, shared_ptr<City> eC, int p) {
+    startCity = sC;
+    endCity = eC;
+    points = p;
 }
 
 std::vector<std::shared_ptr<DestinationCard>> generateDests(const std::vector<std::shared_ptr<City>>& cities)
