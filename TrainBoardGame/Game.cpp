@@ -3,6 +3,8 @@
 // Setup of game
 Game::Game(int numPlayers)
 {
+	gameOver = false;
+	
 	// Setup Board
 	gameBoard = Board(); 
 	
@@ -24,4 +26,29 @@ Game::Game(int numPlayers)
 	dests = generateDests(gameBoard.cities);
 
 	// Assign first player - will forgo for now maybe implement way later server-side
+}
+
+void Game::run_game() {
+	while (!gameOver) {
+		for (Player &player : players) { 
+			player_turn(player);
+		}
+		gameOver = check_gameover(); // Move later to be more accurate
+	}
+	calculate_score();
+	// Display score
+}
+
+void Game::player_turn(Player player) {
+
+}
+
+bool Game::check_gameover() {
+	// If player has 2 or less trains left
+	// Do one final round and game is over
+	return true;
+}
+
+int Game::calculate_score() {
+	return 0;
 }

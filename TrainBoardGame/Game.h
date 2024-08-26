@@ -23,4 +23,5 @@ public:
 	int calculate_score(); // Should probably be consistent about snake vs camel
 	void player_turn(Player player);
 	void run_game();
+	bool check_gameover();
 };
