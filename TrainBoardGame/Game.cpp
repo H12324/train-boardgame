@@ -46,9 +46,25 @@ void Game::player_turn(Player player) {
 	// TODO: Add loop to aid selecting action 
 	if (action == 1) {
 		// Draw card from deck 
+		for (int i = 0; i < 2; i++) {
+			player.drawCard(deck.back());
+			deck.pop_back();
+		}
+	// TODO: Add discard pile logic
 	}
+	// TODO: Give ability for player to choose which card at front
 	else if (action == 2) {
 		// Draw card from front
+		// MAYBE TODO: Implement rule where if wild card is chosen can only draw 1
+		int f1 = 0, f2 = 1; // Replace with player choice later
+		player.drawCard(face[f1]);
+		player.drawCard(face[f2]);
+
+		face[f1] = deck.back();
+		deck.pop_back();
+		face[f2] = deck.back();
+		deck.pop_back();
+		// Again insert discard logic
 	}
 	else if (action == 3){
 		// insert Claim route logic

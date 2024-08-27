@@ -12,6 +12,7 @@ class Game
 private:
 	std::vector<shared_ptr<TrainCard>> deck;
 	std::vector<shared_ptr<TrainCard>> face; // Cards face-up in turn
+	std::vector<shared_ptr<TrainCard>> discard;
 	vector<shared_ptr<DestinationCard>> dests;
 	Board gameBoard;
 	vector<Player> players;

@@ -4,8 +4,9 @@ int Player::chooseAction() {
 	return 0;
 }
 
-void Player::drawCard(TrainCard card)
+void Player::drawCard(shared_ptr<TrainCard> card)
 {
+	hand.push_back(card);
 }
 
 void Player::claimRoute()
