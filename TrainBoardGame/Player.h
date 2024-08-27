@@ -10,6 +10,7 @@ public:
 
 	Player(int numTrains) : trains(numTrains) {}
 	// Actions player can do in a turn
+	int chooseAction();
 	void drawCard(TrainCard card);
 	void claimRoute();
 	void drawDestination();

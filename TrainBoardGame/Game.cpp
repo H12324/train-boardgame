@@ -1,5 +1,5 @@
 #include "Game.h"
-
+#include <iostream>
 // Setup of game
 Game::Game(int numPlayers)
 {
@@ -21,7 +21,8 @@ Game::Game(int numPlayers)
 		face.push_back(deck.back());
 		deck.pop_back();
 	}
-
+	// Should give players each some cards
+	
 	// Setup Destination Cards - player normally has choice, will forgo that for now and just give 2 or 3 
 	dests = generateDests(gameBoard.cities);
 
@@ -40,7 +41,24 @@ void Game::run_game() {
 }
 
 void Game::player_turn(Player player) {
-
+	// Eventually use timer for determining player action
+	int action = player.chooseAction();
+	// TODO: Add loop to aid selecting action 
+	if (action == 1) {
+		// Draw card from deck 
+	}
+	else if (action == 2) {
+		// Draw card from front
+	}
+	else if (action == 3){
+		// insert Claim route logic
+	}
+	else if (action == 4) {
+		// new destination card logic
+	}
+	else {
+		std::cout << "No Real Action Selected" << std::endl;
+	}
 }
 
 bool Game::check_gameover() {
